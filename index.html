@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .a {
+                margin-left: 50%;
+                transform: translateX(-30%);
+                margin-top: 20%;
+            }   
+
+            .x {
+                font-size: 30px;
+                margin-top: 20px;
+                margin-left: 100px;
+            }
+
+            form {
+                display: flex;
+                height: 50px;
+                width: 20px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="a">
+            <input placeholder="nhập a" onchange="checka()" id="id1" type="text">
+            <input placeholder="nhập b" onchange="checkb()" id="id2" type="text">
+            
+            <button id="btn" type="submit"> = </button>
+            <div class="x">
+                <span>Kết quả = </span>
+                <span id="result"></span>
+            </div>
+        </div>
+        <script>
+            var a;
+            var b;
+            var btn = document.querySelector("#btn")
+
+            function checka () {
+                a = document.querySelector("#id1").value
+            }
+
+            function checkb () {
+                b = document.querySelector("#id2").value
+            }
+
+            btn.addEventListener("click", function(e) {
+                document.getElementById("result").innerHTML = parseInt(a) * parseInt(b);
+            });
+
+        </script>   
+    </body>
+</html>
